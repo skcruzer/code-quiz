@@ -3,7 +3,7 @@
   --hoverColor: rgb(137, 234, 251);
   background-color: lightgray;
   --fontColor: rgb(253, 253, 253);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Raleway', sans-serif;
   --color: rgb(169, 99, 234);
 
 }
@@ -18,12 +18,21 @@
 h1 {
   font-size: 5.4rem;
   color: darkblue;
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
 }
 
 h2 {
   font-size: 4.2rem;
   margin-bottom: 4rem;
+}
+
+h4 {
+  font-size: 1rem;
+  color: darkblue;
+  margin-bottom: 3rem;
+  text-align: center;
+  padding-left: 12rem;
+  padding-right: 12rem;
 }
 
 .container {
@@ -66,6 +75,32 @@ h2 {
   text-align: center;
   margin-bottom: 1rem;
   text-decoration: none;
-  color: darkblue;
-  background: linear-gradient(90deg, rgb(18,92,255) 0%, rgb(0, 102, 255) 100%);
+  color: rgb(13, 12, 12);
+  background: linear-gradient(90deg, rgb(26, 80, 197) 0%, rgb(6, 82, 197) 100%);
+}
+
+.btn:hover {
+  cursor: pointer;
+  box-shadow: 0 0.4rem 1.4rem 0 rgba(8, 114, 244, 0.6);
+  transition: transform 150ms;
+  transform: scale(1.03);
+}
+
+.btn[disabled]:hover {
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+#highscores-btn {
+  background: linear-gradient(90deg, rgb(248, 237, 23) 0%, rgb(231, 228, 18) 100%);
+}
+
+#highscores-btn:hover {
+  box-shadow: 0.04rem 0.4rem rgba(255, 255, 0, 0.5);
+}
+
+.fa-crown {
+  font-size: 2.5rem;
+  margin-left: 1rem;
 }
