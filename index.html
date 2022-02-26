@@ -4,26 +4,21 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JavaScript Quiz</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Code Quiz</title>
+  <link rel="stylesheet" href="assets/css/reset.css">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
-  <!-- Added header for user to view high scores and timer -->
-  <header>
-    <h3>
-      View Highscores
-    </h3>
-    <h3>
-      Time: <span class="time" id="timer"></span>
-    </h3>
-  </header>
-
-  <!-- main id for questions -->
-  <main id="main">
-
-  </main>
+  <!-- Starting the game and viewing high scores buttons -->
+  <div id="container">
+    <div id="home" class="flex-column flex-center">
+      <h1>Are you Ready</h1>
+      <h4>Answer the following questions related to Coding. Please note you are timed and for every incorrect answer you time is subtracted from the clock!</h4>
+      <a href="/game.html" class="btn">Play</a>
+      <a href="/highscores.html" id="highscores-btn" class="btn">View High Scores</a>
+    </div>
+    
 
   <script src="assets/js/script.js"></script>
 </body>
