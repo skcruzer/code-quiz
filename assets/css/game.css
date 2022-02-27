@@ -1,31 +1,35 @@
+/* Style sheet for game page */
 body {
-  color: rgb(83, 65, 156);
+  color: rgb(255, 255, 255);
 }
 
 .choice-container {
-  /* display: flex; */
   margin-bottom: 0.8rem;
   width: 50%;
   border-radius: 4px;
   background: rgb(18, 93, 255);
   font-size: 3rem;
   min-width: 80rem;
+  height: 12rem;
+  border: solid black;
 }
 
 .choice-container:hover {
   cursor: pointer;
   box-shadow: 0 0.4rem 0.4rem 0 rgba(6, 103, 247, 0.5);
   transform: scale(1.02);
-  transform: transform 100ms;
+  transform: transform 75ms;
 }
 
 .choice-prefix {
   padding: 2rem 2.5rem;
-  color: white;
+  color: gold;
 }
 
 .choice-text {
   padding: 2rem;
+  text-align: center;
+  margin-bottom: 1rem;
   width: 100%;
 }
 
@@ -41,6 +45,7 @@ body {
 #hud {
   display: flex;
   justify-content: space-between;
+  margin-top: 10rem;
 }
 
 .hud-prefix {
@@ -52,20 +57,20 @@ body {
   text-align: center;
 }
 
-#progressBar {
+/* .timer {
   width: 20rem;
   height: 3rem;
   border: 0.2rem solid rgb(11, 233, 36);
   margin-top: 2rem;
   border-radius: 50px;
   overflow: hidden;
-}
+} */
 
-#progressBarFull {
+/* #progressBarFull {
   height: 100%;
   background: rgb(11, 233, 36);
   width: 0%;
-}
+} */
 
 @media screen and (max-width: 768px) {
   .choice-container {

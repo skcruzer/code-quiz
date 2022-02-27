@@ -1,7 +1,7 @@
 /* adding color and style attributes to the website */
 :root {
   --hoverColor: rgb(137, 234, 251);
-  background-color: lightgray;
+  background-color: rgb(61, 61, 61);
   --fontColor: rgb(253, 253, 253);
   font-family: 'Raleway', sans-serif;
   --color: rgb(169, 99, 234);
@@ -17,7 +17,7 @@
 
 h1 {
   font-size: 5.4rem;
-  color: darkblue;
+  color: white;
   margin-bottom: 2rem;
 }
 
@@ -27,12 +27,12 @@ h2 {
 }
 
 h4 {
-  font-size: 1rem;
-  color: darkblue;
+  font-size: 2rem;
+  color: white;
   margin-bottom: 3rem;
   text-align: center;
-  padding-left: 12rem;
-  padding-right: 12rem;
+  padding-left: 40rem;
+  padding-right: 40rem;
 }
 
 .container {

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/game.css">
@@ -19,9 +19,7 @@
             Question
           </p>
           <!-- progess bar to show how much quiz is left -->
-          <div id="progressBar">
-            <div id="progressBarFull"></div>
-          </div>
+          <span class="time" id="timer"></span>
         </div>
         <!-- current score -->
         <div class="hud-item">
@@ -34,7 +32,7 @@
         </div>
       </div>
       <!-- question box with 4 multiple choice possibilities -->
-      <div id="question">What is the answer for this question?</div>
+      <h2 id="question">What is the answer for this question?</h2>
       <div class="choice-container">
         <p class="choice-prefix">A</p>
         <p class="choice-text" data-number="1">Choice 1</p>
@@ -51,6 +49,6 @@
     </div>
   </div>
 
-  <script src="assets/js/game.js"></script>
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
