@@ -5,6 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Save Your Score!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/game.css">
 </head>
@@ -17,11 +20,12 @@
         <!-- Save score input and buttons -->
         <h2 id="end-text">Enter your name below to save your score!</h2>
         <input type="text" name="name" id="username" placeholder="Enter your name">
-        <button class="btn" id="saveScoreBtn" type="submit" onClick="saveHighScore(event)" disabled>Save</button>
+        <button class="btn" id="saveScoreBtn" type="submit" onclick="saveHighScore(event)" disabled>Save</button>
       </form>
       <a href="game.html" class="btn">Play Again?</a>
       <a href="index.html" class="btn">Home</a>
     </div>
+    <script src="assets/js/end.js"></script>
   </div>
 </body>
 </html>

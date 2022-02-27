@@ -56,6 +56,10 @@ body {
   text-align: center;
 }
 
+#timer {
+  font-size: 1.8rem;
+}
+
 @media screen and (max-width: 768px) {
   .choice-container {
     min-width: 40rem;

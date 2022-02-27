@@ -112,7 +112,7 @@ getNewQuestion = () => {
   if (availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
     localStorage.setItem('mostRecentScore', score)
 
-    return window.location.assign('/end.html')
+    return window.location.assign('end.html')
   }
 
   questionCounter++
@@ -133,8 +133,8 @@ getNewQuestion = () => {
 }
 
 // timer function
-const timer = function () {
-  const timeInterval = setInterval(() => {
+var timer = function () {
+  var timeInterval = setInterval(() => {
     if (end === false) {
       timerEl.textContent = timeLeft;
       timeLeft--;
