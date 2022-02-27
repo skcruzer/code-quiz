@@ -1,15 +1,16 @@
 // creating variables for items in page
-const question = document.getElementById('question')
-const question = Array.from(document.getElementById('choice-text'))
-const progressText = document.getElementById('progressText')
-const scoreText = document.getElementById('score')
-const timerEl = document.getElementById('timer')
+const question = document.querySelector('#question')
+const choices = Array.from(document.querySelectorAll('.choice-text'))
+const progressText = document.querySelector('#progressText')
+const scoreText = document.querySelector('#score')
+const timerEl = document.querySelector('#timer')
 
 let currentQuestion = {}
 let acceptedAnswers = true
 let score = 0
 let questionCounter = 0
 let availableQuestions = []
+let timeLeft = 90
 
 // 10 coding questions!
 let questions = [
@@ -97,25 +98,25 @@ let questions = [
 
 // variables for keeping track of score and how many questions
 const SCORE_POINTS = 100
-const MAX_Questions = 10
+const MAX_QUESTIONS = 10
 
 startGame = () => {
   questionCounter = 0
   score = 0
-  availableQuestions = [...question]
+  availableQuestions = [...questions]
   getNewQuestion()
 }
 
 // parameters for new questions
 getNewQuestion = () => {
-  if (availableQuestions.length === 0 || questionCounter > MAX_Questions) {
+  if (availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
     localStorage.setItem('mostRecentScore', score)
 
     return window.location.assign('/end.html')
   }
 
   questionCounter++
-  progressText.innerText = 'Question ${questionCounter} of ${MAX_Questions}'
+  progressText.innerText = ['Question ' + questionCounter + ' of ' + MAX_QUESTIONS]
 
   const questionsIndex = Math.floor(Math.random() * availableQuestions.length)
   currentQuestion = availableQuestions[questionsIndex]
@@ -130,3 +131,54 @@ getNewQuestion = () => {
 
   acceptedAnswers = true
 }
+
+// timer function
+const timer = function () {
+  const timeInterval = setInterval(() => {
+    if (end === false) {
+      timerEl.textContent = timeLeft;
+      timeLeft--;
+      return timeLeft;
+    } else {
+      timerEl.textContent = "";
+      clearInterval(timeInterval);
+    }
+  }, 1000);
+
+  console.log("Your timer has started!")
+  if (end === true) {
+    timerEl.textContent = timeLeft;
+  }
+}
+
+choices.forEach(choice => {
+  choice.addEventListener('click', e => {
+    if(!acceptedAnswers) return
+
+    acceptedAnswers = false
+    const selectedChoice = e.target
+    const selectedAnswer = selectedChoice.dataset['number']
+
+    let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
+
+    if(classToApply === 'correct') {
+      incrementScore(SCORE_POINTS)
+    }
+
+    selectedChoice.parentElement.classList.add(classToApply)
+
+    setTimeout(() => {
+      selectedChoice.parentElement.classList.remove(classToApply)
+      getNewQuestion()
+
+    }, 1000)
+  })
+})
+
+incrementScore = num => {
+  score +=num
+  scoreText.innerText = score
+}
+
+
+startGame()

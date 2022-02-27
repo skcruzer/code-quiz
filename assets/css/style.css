@@ -22,7 +22,7 @@ h1 {
 }
 
 h2 {
-  font-size: 4.2rem;
+  font-size: 2.5rem;
   margin-bottom: 4rem;
 }
 
@@ -31,8 +31,8 @@ h4 {
   color: white;
   margin-bottom: 3rem;
   text-align: center;
-  padding-left: 40rem;
-  padding-right: 40rem;
+  padding-left: 10rem;
+  padding-right: 10rem;
 }
 
 .container {
@@ -98,9 +98,4 @@ h4 {
 
 #highscores-btn:hover {
   box-shadow: 0.04rem 0.4rem rgba(255, 255, 0, 0.5);
-}
-
-.fa-crown {
-  font-size: 2.5rem;
-  margin-left: 1rem;
 }

@@ -10,19 +10,19 @@ body {
   background: rgb(18, 93, 255);
   font-size: 3rem;
   min-width: 80rem;
-  height: 12rem;
+  height: 11rem;
   border: solid black;
 }
 
 .choice-container:hover {
   cursor: pointer;
-  box-shadow: 0 0.4rem 0.4rem 0 rgba(6, 103, 247, 0.5);
+  /* box-shadow: 0 0.4rem 1.4rem 0 rgba(6, 103, 247, 0.5); */
   transform: scale(1.02);
-  transform: transform 75ms;
+  transform: transform 100ms;
 }
 
 .choice-prefix {
-  padding: 2rem 2.5rem;
+  padding: 2rem 1.5rem;
   color: gold;
 }
 
@@ -45,7 +45,6 @@ body {
 #hud {
   display: flex;
   justify-content: space-between;
-  margin-top: 10rem;
 }
 
 .hud-prefix {
