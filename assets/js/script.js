@@ -12,6 +12,20 @@ let questionCounter = 0
 let availableQuestions = []
 let timeLeft = 90
 
+// timer function
+timer = () => {
+  const timeInterval = setInterval(() => {
+    if (end === false) {
+      timerEl.textContent = timeLeft
+      timeLeft--
+      return timeLeft
+    } else {
+      timerEl.textContent = ''
+      clearInterval(timeInterval)
+    }
+  }, 1000)
+} 
+
 // 10 coding questions!
 let questions = [
   {
@@ -132,24 +146,7 @@ getNewQuestion = () => {
   acceptedAnswers = true
 }
 
-// timer function
-var timer = function () {
-  var timeInterval = setInterval(() => {
-    if (end === false) {
-      timerEl.textContent = timeLeft;
-      timeLeft--;
-      return timeLeft;
-    } else {
-      timerEl.textContent = "";
-      clearInterval(timeInterval);
-    }
-  }, 1000);
 
-  console.log("Your timer has started!")
-  if (end === true) {
-    timerEl.textContent = timeLeft;
-  }
-}
 
 choices.forEach(choice => {
   choice.addEventListener('click', e => {
@@ -163,6 +160,10 @@ choices.forEach(choice => {
 
     if(classToApply === 'correct') {
       incrementScore(SCORE_POINTS)
+    }
+
+    if (classToApply === 'incorrect') {
+      timeLeft = timeLeft - 10;
     }
 
     selectedChoice.parentElement.classList.add(classToApply)
@@ -179,6 +180,5 @@ incrementScore = num => {
   score +=num
   scoreText.innerText = score
 }
-
 
 startGame()
