@@ -12,19 +12,8 @@ let questionCounter = 0
 let availableQuestions = []
 let timeLeft = 90
 
-// timer function
-timer = () => {
-  const timeInterval = setInterval(() => {
-    if (end === false) {
-      timerEl.textContent = timeLeft
-      timeLeft--
-      return timeLeft
-    } else {
-      timerEl.textContent = ''
-      clearInterval(timeInterval)
-    }
-  }, 1000)
-} 
+let timer;
+
 
 // 10 coding questions!
 let questions = [
@@ -114,7 +103,19 @@ let questions = [
 const SCORE_POINTS = 100
 const MAX_QUESTIONS = 10
 
-startGame = () => {
+const startGame = () => {
+  // timer function
+  timer = setInterval(() => {
+    if (timeLeft > 0) {
+      timerEl.textContent = timeLeft
+      timeLeft--
+      return timeLeft
+    } else {
+      timerEl.textContent = ''
+      clearInterval(timeInterval)
+    }
+  }, 1000);
+
   questionCounter = 0
   score = 0
   availableQuestions = [...questions]
@@ -122,7 +123,7 @@ startGame = () => {
 }
 
 // parameters for new questions
-getNewQuestion = () => {
+const getNewQuestion = () => {
   if (availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
     localStorage.setItem('mostRecentScore', score)
 
@@ -150,7 +151,7 @@ getNewQuestion = () => {
 
 choices.forEach(choice => {
   choice.addEventListener('click', e => {
-    if(!acceptedAnswers) return
+    if (!acceptedAnswers) return
 
     acceptedAnswers = false
     const selectedChoice = e.target
@@ -158,7 +159,7 @@ choices.forEach(choice => {
 
     let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
 
-    if(classToApply === 'correct') {
+    if (classToApply === 'correct') {
       incrementScore(SCORE_POINTS)
     }
 
@@ -176,9 +177,9 @@ choices.forEach(choice => {
   })
 })
 
-incrementScore = num => {
-  score +=num
+const incrementScore = num => {
+  score += num
   scoreText.innerText = score
 }
 
-startGame()
+startGame();
