@@ -110,10 +110,12 @@ const startGame = () => {
       timerEl.textContent = timeLeft
       timeLeft--
       return timeLeft
+      
     } else {
       timerEl.textContent = ''
-      clearInterval(timeInterval)
+      return window.location.assign('end.html')
     }
+
   }, 1000);
 
   questionCounter = 0
