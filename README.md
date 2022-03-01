@@ -41,3 +41,5 @@ THEN I can save my initials and score
 * The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
 * [https://github.com/skcruzer/code-quiz.git]
 
+- - -
+© Skcruzer 2022
