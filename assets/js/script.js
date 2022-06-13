@@ -66,7 +66,7 @@ let questions = [
     answer: 1,
   },
   {
-    question: 'What word describes a set of instructions that coputers need to do work?',
+    question: 'What word describes a set of instructions that computers need to do work?',
     choice1: 'Blueprint',
     choice2: 'Synopsis',
     choice3: 'Program',
